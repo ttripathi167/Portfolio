@@ -2594,6 +2594,36 @@ input, select, textarea {
 		display: inline-block;
 		position: relative;
 	}
+			.image.left, .image.right {
+			max-width: 50%; /* Adjusted width */
+			}
+			
+			.image.left {
+			    float: left;
+			    margin: 0 1rem 1rem 0; /* Reduced margin */
+			    top: 0.75rem;
+			}
+			
+			.image.right {
+			    float: right;
+			    margin: 0 0 1rem 1rem; /* Reduced margin */
+			    top: 0.75rem;
+			}
+			
+			.image.fit {
+			    max-width: 900px; /* Increased width for fit images */
+			    width: 100%;
+			    margin: 2.5rem auto;
+			}
+			
+			.image.main {
+			    margin: 3rem 0; /* Reduced margin for main images */
+			    width: 100%;
+			}
+			
+			a.image:hover img {
+			    transform: scale(1.1); /* Increased zoom on hover */
+			}
 
 		.image img {
 			display: block;
