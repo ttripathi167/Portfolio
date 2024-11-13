@@ -43,6 +43,7 @@
 
         <!-- Main -->
         <div id="main">
+
             <!-- About Me Section -->
             <article class="post featured">
                 <header class="major">
@@ -53,79 +54,44 @@
                     <img src="images/Img.jpg" alt="Profile picture of Vaishnavi Tripathi" />
                 </div>
                 <div class="container">
-                    <div>
-                        <h3 id="content">My name is Vaishnavi Tripathi</h3>
-                        <p>Aspiring Data Scientist with 3.5 years of experience in designing and developing data warehousing solutions.</p>
-                        <p>Proficient in building ETL pipelines, real-time data processing, cloud platforms, and big data frameworks. Strong background in delivering business intelligence solutions and collaborating with cross-functional teams to implement innovative technologies. Currently pursuing Master of Science in Computer Science with a Data Science Track at Sacred Heart University.</p>
-                        <p>In my role as an AI lab assistant and Graduate Assistant, I assist students in the "Artificial Intelligence and Machine Learning" and "Python for Data Science" courses. I help them with their questions and concerns, and AI and Data Science Support: Manage AI lab infrastructure, including configuration and troubleshooting of Lambda servers to support high-performance data processing and machine learning workflows.</p>
-                    </div>
+                    <h3>My name is Vaishnavi Tripathi</h3>
+                    <p>Aspiring Data Scientist with 3.5 years of experience in designing and developing data warehousing solutions.</p>
+                    <p>Proficient in building ETL pipelines, real-time data processing, cloud platforms, and big data frameworks. Strong background in delivering business intelligence solutions and collaborating with cross-functional teams to implement innovative technologies. Currently pursuing Master of Science in Computer Science with a Data Science Track at Sacred Heart University.</p>
+                    <p>In my role as an AI lab assistant and Graduate Assistant, I assist students in the "Artificial Intelligence and Machine Learning" and "Python for Data Science" courses. I help them with their questions and concerns, and AI and Data Science Support: Manage AI lab infrastructure, including configuration and troubleshooting of Lambda servers to support high-performance data processing and machine learning workflows.</p>
                 </div>
             </article>
 
-            <!-- Professional Experiences -->
+            <!-- Data Science Projects Section -->
             <section>
                 <header class="major">
-                    <h2>Professional experiences</h2>
+                    <h2>Data Science Projects</h2>
                 </header>
-                <h3>Data Analyst in "EVRE"</h3>
-                <p>Machine Learning and Data Processing: Built and refined data pipelines, leveraging machine learning algorithms and automated systems for predictive analytics, reducing processing times by 25%.</p>
-                <p>Collaboration for System Improvement: Partnered with engineering teams to test new data models and implement automated validation scripts, leading to a 25% enhancement in user experience and error reduction.</p>
-                
-                <h3>Junior Data Scientist, "Randstad"</h3>
-                <p>Optimized Data Pipelines and ETL for Robotics Systems: Streamlined data flow and integration processes in large-scale environments, achieving a 20% increase in data retrieval and storage efficiency.</p>
-                <p>Simulation and Experimentation in Robotics Systems: Conducted structured and unstructured data analysis, creating simulation models for system reliability and robustness testing.</p>
-                <p>Big Data Management and Analytics: Developed over 20 complex data tables and contributed to real-time system analytics and performance tuning, increasing system response rates by 30%.</p>
-            </section>
 
-            <!-- Skills Section -->
-            <section>
-                <header class="major">
-                    <h1>Skills</h1>
-                </header>
-                <div class="features">
-                    <article>
-                        <div class="content">
-                            <h3 class="icon brands alt fa-twitter">Programming and Query Languages</h3>
-                            <ul>
-                                <li>Python</li>
-                                <li>SQL</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="content">
-                            <h3>Statistics and Machine Learning</h3>
-                            <ul>
-                                <li>Descriptive statistics including measures of location, dispersion, asymmetry, kurtosis, and density.</li>
-                                <li>Experience in building and evaluating regression, classification, and clustering models.</li>
-                                <li>Knowledge with data balancing techniques, attribute selection, and dimensionality reduction methods.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="content">
-                            <h3>Software Engineering</h3>
-                            <ul>
-                                <li>Version control with Git, GitHub and Gitlab.</li>
-                                <li>Experience working with virtual environments.</li>
-                                <li>Knowledge in scheduling tasks.</li>
-                                <li>Experience with deploying applications (API) on cloud.</li>
-                            </ul>
-                        </div>
-                    </article>
-                    <article>
-                        <div class="content">
-                            <h3>Other tools and techniques</h3>
-                            <ul>
-                                <li>Power BI and Tableau</li>
-                                <li>Streamlit and Sweeviz</li>
-                                <li>Regex</li>
-                                <li>Web Scraping</li>
-                                <li>Pipeline</li>
-                            </ul>
-                        </div>
-                    </article>
-                </div>
+                <!-- Project 1 -->
+                <article>
+                    <header>
+                        <h2>Customer Loyalty Program - Clustering</h2>
+                    </header>
+                    <a href="https://github.com/jlcunha/Customer_Loyalty_Program_Clustering-" class="image fit"><img src="images/cluster.png" alt="" /></a>
+                    <p>Developed a customer segmentation model using clustering techniques. Identified a specific cluster that generates 50% of the company's revenue. Created a Looker dashboard for insights and metrics.</p>
+                    <ul class="actions special">
+                        <li><a href="https://github.com/jlcunha/Customer_Loyalty_Program_Clustering-" class="button">Learn More</a></li>
+                    </ul>
+                </article>
+
+                <!-- Project 2 -->
+                <article>
+                    <header>
+                        <h2>Classification - Learning to Rank</h2>
+                    </header>
+                    <a href="https://github.com/jlcunha/HealthInsuranceCrossSell" class="image fit"><img src="images/everguardian.png" alt="" /></a>
+                    <p>Built a model to predict car insurance purchases among health insurance customers, boosting profitability by reducing unnecessary sales calls.</p>
+                    <ul class="actions special">
+                        <li><a href="https://github.com/jlcunha/HealthInsuranceCrossSell" class="button">Learn More</a></li>
+                    </ul>
+                </article>
+
+                <!-- Additional Projects... -->
             </section>
 
             <!-- Footer -->
@@ -201,4 +167,12 @@
         }
 
         /* Responsive adjustments for footer */
-        @media only screen and (max-width: 768
+        @media only screen and (max-width: 768px) {
+            .split.contact {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</body>
+</html>
