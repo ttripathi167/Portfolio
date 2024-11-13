@@ -80,7 +80,7 @@
 							}
 							
 							img {
-							  max-width: 100%;
+							  max-width: 50%;
 							  height: auto;
 							  margin-left: 20px;
 							  margin:0 auto;
@@ -88,6 +88,25 @@
 							
 							.container > div {
 							  order: -1;
+							}
+
+
+							.container {
+								display;display: flex;
+								align-items: center;
+								margin-top: 20px;
+							}
+								
+							.profile-picture img {
+								width: 150px; /* Adjust the size as desired */
+								height: 150px; /* Same as width for circular shape */
+								border-radius: 50%; /* Makes the image circular */
+								margin-right: 20px; /* Space between image and text */
+								object-fit: cover; /* Ensures image fills the circular frame */
+							}
+								
+							.container > div {
+								max-width: 600px; /* Limit the width of the text section if needed */
 							}
 							</style>
 							
