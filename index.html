@@ -49,7 +49,6 @@
                 <header class="major">
                     <h2>About me</h2>
                 </header>
-                <!-- Centered Profile Image -->
                 <div class="profile-picture">
                     <img src="images/Img.jpg" alt="Profile picture of Vaishnavi Tripathi" />
                 </div>
@@ -68,11 +67,13 @@
                 </header>
 
                 <!-- Project 1 -->
-                <article>
+                <article class="post">
                     <header>
-                        <h2>Customer Loyalty Program - Clustering</h2>
+                        <h3>Customer Loyalty Program - Clustering</h3>
                     </header>
-                    <a href="https://github.com/jlcunha/Customer_Loyalty_Program_Clustering-" class="image fit"><img src="images/cluster.png" alt="" /></a>
+                    <div class="image fit">
+                        <img src="images/cluster.png" alt="Clustering Project Image" />
+                    </div>
                     <p>Developed a customer segmentation model using clustering techniques. Identified a specific cluster that generates 50% of the company's revenue. Created a Looker dashboard for insights and metrics.</p>
                     <ul class="actions special">
                         <li><a href="https://github.com/jlcunha/Customer_Loyalty_Program_Clustering-" class="button">Learn More</a></li>
@@ -80,18 +81,20 @@
                 </article>
 
                 <!-- Project 2 -->
-                <article>
+                <article class="post">
                     <header>
-                        <h2>Classification - Learning to Rank</h2>
+                        <h3>Classification - Learning to Rank</h3>
                     </header>
-                    <a href="https://github.com/jlcunha/HealthInsuranceCrossSell" class="image fit"><img src="images/everguardian.png" alt="" /></a>
+                    <div class="image fit">
+                        <img src="images/everguardian.png" alt="Learning to Rank Project Image" />
+                    </div>
                     <p>Built a model to predict car insurance purchases among health insurance customers, boosting profitability by reducing unnecessary sales calls.</p>
                     <ul class="actions special">
                         <li><a href="https://github.com/jlcunha/HealthInsuranceCrossSell" class="button">Learn More</a></li>
                     </ul>
                 </article>
 
-                <!-- Additional Projects... -->
+                <!-- Add more projects as needed... -->
             </section>
 
             <!-- Footer -->
@@ -128,7 +131,7 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Custom CSS -->
+    <!-- Custom CSS for Posts -->
     <style>
         /* Center the profile picture */
         .profile-picture {
@@ -142,17 +145,28 @@
             border-radius: 50%;
         }
 
-        /* Features grid */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 2rem;
+        /* Styling for posts section */
+        .post {
+            border-bottom: 1px solid #eaeaea;
+            padding: 20px 0;
+            text-align: center;
         }
 
-        @media only screen and (max-width: 768px) {
-            .features {
-                grid-template-columns: 1fr;
-            }
+        .post h3 {
+            font-size: 1.5em;
+        }
+
+        .image.fit {
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .image.fit img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
         }
 
         /* Footer alignment */
