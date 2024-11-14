@@ -241,10 +241,13 @@ The gains of clustering customer strategies within a loyalty program are immense
 
 ## **5 - Author**
 
-Lucas da Cunha
-
+Vaishnavi Tripathi
 Data Scientist
 
+
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
+
+[GitHub Profile](https://github.com/ttripathi167/)
 
 [Project Portfolio](https://jlcunha.github.io/ProjectPortfolio/)
 
