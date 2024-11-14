@@ -233,13 +233,11 @@ To obtain the predictions, the seller only needs to input the customer data, cli
 
 ## **5 - Author**
 
-Lucas da Cunha
-
+Vaishnavi Tripathi
 Data Scientist
 
 
-[Project Portfolio](https://jlcunha.github.io/portfolio_projetos/)
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
 
-[GitHub Profile](https://github.com/jlcunha/)
+[GitHub Profile](https://github.com/ttripathi167/)
 
-[Medium](https://medium.com/@lucasdacunh)
