@@ -1,137 +1,144 @@
-# Welcome to the Star Jeans Data Analysis
-![alt text](img/starjeans.jpg?raw=true)
+# Welcome to the Star Jeans Data Analysis  
+![alt text](img/starjeans.jpg?raw=true)  
 
-## 1 - Business Problem
+---
 
+## 1 - Business Problem  
 
-Eduardo e Marcelo são dois brasileiros, amigos e sócios de empreendimentos. Depois de vários negócios bem sucedidos, eles estão planejando entrar no mercado de moda dos USA como um modelo de negócio do tipo E-commerce.
+Eduardo and Marcelo are two Brazilian friends and business partners. After several successful ventures, they are planning to enter the U.S. fashion market with an E-commerce business model.  
 
-A ideia inicial é entrar no mercado com apenas um produto e para um público específico, no caso o produto seria calças Jeans para o público masculino. O objetivo é manter o custo de operação baixo e escalar à medida que forem conseguindo clientes.
+The initial idea is to start with just one product for a specific audience. The product will be men's jeans, with the goal of keeping operational costs low and scaling as they gain customers.  
 
-Porém, mesmo com o produto de entrada e a audiência definidos, os dois sócios não têm experiência nesse mercado de moda e portanto não sabem definir coisas básicas como preço, o tipo de calça e o material para a fabricação de cada peça.
+However, even with the product and target audience defined, the two partners lack experience in the fashion market and therefore cannot determine basic details such as pricing, jeans type, and materials required for production.  
 
-Assim, os dois sócios contrataram uma consultoria de Ciência de Dados para responder às seguintes perguntas:
+Thus, the two partners hired a Data Science consultancy to answer the following questions:  
+1. What is the best selling price for the jeans?  
+2. How many types of jeans and colors should be offered initially?  
+3. What raw materials are necessary to manufacture the jeans?  
 
-1. Qual o melhor preço de venda para as calças?
-2. Quantos tipos de calças e suas cores para o produto inicial?
-3. Quais as matérias-primas necessárias para confeccionar as calças?
+---
 
-## 2 - Data Overview
+## 2 - Data Overview  
 
+| Attribute        | Description                                                  |  
+|------------------|--------------------------------------------------------------|  
+| product_id       | Unique ID for each product.                                  |  
+| style_id         | Unique ID for each style.                                    |  
+| color_id         | Unique ID for each color.                                    |  
+| product_name     | Name of the product.                                         |  
+| color_name       | Name of the color.                                           |  
+| fit              | Jeans fit type.                                              |  
+| product_price    | Product price.                                               |  
+| cotton           | Percentage of cotton in the jeans.                           |  
+| polyester        | Percentage of polyester in the jeans.                        |  
+| spandex          | Percentage of spandex in the jeans.                          |  
+| scrapy_datetime  | Date when the data was collected.                            |  
 
-| Attribute | Description |
-| :----- | :----- |
-| product_id | Id único para cada produto. |
-| style_id | Id único para cada estilo. |
-| color_id | Id único para cada cor. |
-| product_name | Nome do produto. |
-| color_name | Nome da cor. |
-| fit | Formato do Jeans. |
-| product_price | Preço do produto. |
-| cotton | Porcentagem de Cotton na calça. |
-| polyester | Porcentagem de Poliéster na calça. |
-| spandex | Porcentagem de Spandex na calça. |
-| scrapy_datetime | Data em que foi feita a coleta. |
+> **The data was collected from H&M's website (one of the largest clothing companies).**  
 
-> **Os dados foram coletados através do site da H&M( Hennes&Mauritz - uma das maiores empresas no segmento de roupas ).**
+Website link: [H&M Website](https://www2.hm.com/en_us/men/products/jeans.html)  
 
+---
 
-Link do Website: [H&M Website](https://www2.hm.com/en_us/men/products/jeans.html)
+## 3 - Solution Strategy  
 
+**3.1 Data Collection:**  
+Perform web scraping on H&M's website (automated collection of structured web data). The library Beautiful Soup was used for web scraping.  
 
-## 3 - Solution Strategy
+Library link: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)  
 
-**3.1 Data Collection:** Fazer web scraping do website da H&M( processo de coleta de dados estruturados da web de maneira automatizada ). Para o web scraping estarei utilizando a biblioteca Beautiful Soup.
+**3.2 Data Cleaning:**  
+This stage used Regex (Regular expressions, or Regex, are patterns used to identify specific character combinations in a string) and other techniques to separate, correct, and clean the collected data.  
 
-Link da biblioteca: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+**3.3 ETL Design:**  
+ETL (Extract, Transform, Load) is a structured process for extracting data from various systems, transforming it per business rules, and loading it into a data warehouse.  
 
-**3.2 Data Cleaning:**  Nesta etapa utilizaremos Regex( Expressão regular, ou Regex, são padrões utilizados para identificar determinadas combinações ou cadeias de caracteres em uma string ) e outras técnicas para separar, corrigir e limpar os dados coletados
+- Design the ETL architecture.  
+- Order dependencies between jobs (tasks), as some depend on others.  
+- Schedule and automate jobs using Cron, which runs ETL processes in the background.  
+- Implement a logging system to monitor ETL behavior and identify issues, such as where a data collection process failed.  
 
-**3.3 ETL Design:** ETL, do inglês Extract Transform Load (Extrair Transformar Carregar), é um processo estruturado de extração de dados de diversos sistemas, transformação desses dados conforme regras de negócios e por fim o carregamento dos dados para Data WareHouse( depósito de dados ).
+<img src="img/arquitetura_de_etl.png" width="600">  
 
-* Projetar a arquitetura do ETL.
+**3.4 Database Creation:**  
+Create a SQLite table with the collected data.  
 
-* Ordenar as dependências entre os jobs( trabalhos). Os jobs tem uma certa ordem para acontecer, pois a jobs que dependem de outros.
+**3.5 Data Analysis:**  
+Perform statistical analysis for each attribute in the collected dataset.  
 
-* Com o Cron( agendador de tarefas ) agendaremos e executaremos automaticamente os jobs. Ele é executado em segundo plano e permite a automatização do ETL, para que não tenhamos que rodar ele manualmente.
+**3.6 Data Visualization:**  
+Generate graphs related to key business problems for better data understanding.  
 
-* Foi criado um sistema de Logs para registrar eventos relevantes. Esse registro pode ser utilizado para monitorar o comportamento do ETL. Com o Log poderemos visualizar se houve algum problema e onde foi esse problema. Ex: Se houver uma quebra na coleta de dados descobriremos em qual produto ele parou.
+**3.7 Create Dashboard:**  
+Using the Panel library, create a dashboard displaying project results.  
 
-<img src= "img/arquitetura_de_etl.png"  width="600">
+<img src="img/dashboard.png" width="600">  
 
-&nbsp;
+---
 
-**3.4 Database Creation:** Com os dados coletados é criado uma tabela em SQLite.
+## 4 - Business Results  
 
-**3.5 Data Analysis:** Análise estatistica para cada atributo dos dados coletados.
+**4.1 - Median Prices of Popular Products:**  
 
-**3.6 Data Visualization:** Com os dados são criados graficos em relação aos principais problemas de negócio, a fim de ter um melhor entendimento dos dados.
+| Index | Product                | Price (US$) |  
+|-------|------------------------|-------------|  
+| 1     | Slim Jeans             | 19.99       |  
+| 2     | Skinny Jeans           | 19.99       |  
+| 3     | Regular Jeans          | 19.99       |  
+| 4     | Freefit® Slim Jeans    | 34.99       |  
+| 5     | Trashed Skinny Jeans   | 24.99       |  
 
-**3.7 Create Dashboard:** Usando a biblioteca panel foi criado um dashboard com os resultados do projeto.
-<img src= "img/dashboard.png"  width="600">
+**4.2 - Most Popular Colors:**  
 
+| Index | Color              |  
+|-------|--------------------|  
+| 1     | Denim Blue         |  
+| 2     | Light Denim Blue   |  
+| 3     | Black              |  
+| 4     | Dark Denim Blue    |  
+| 5     | Dark Gray          |  
 
-## 4 - Business Results
+**4.3 - Final Dashboard:**  
+<img src="img/dashboard_final.png" width="1000">  
 
+Notebook with dashboard: [Notebook](final_data_analysis_dashboard.ipynb)  
 
-**4.1 - Mediana dos preços dos produtos mais populares:**
+---
 
-| Index | Product | Price (US$) |
-| :-----: | :-----: | :-----: |
-| 1 | Slim Jeans | 19.99 |
-| 2 | Skinny Jeans | 19.99 |
-| 3 | Regular Jeans | 19.99 |
-| 4 | Freefit® Slim Jeans | 34.99 |
-| 5 | Trashed Skinny Jeans | 24.99 |
+## 5 - Conclusions  
 
+You may have heard that "Data is the new oil." With web scraping, we gain access to data. With the collected data, we can monitor market trends, gather information to attract new customers, make forecasts, and much more.  
 
-**4.2 - Cores mais populares:**
+Raw data, however, is not easy to interpret, which is where ETL comes in. It cleans and prepares the data, enabling companies to base decisions on concrete insights rather than intuition.  
 
-| Index | Color |
-| :-----: | :----- |
-| 1 | Denim Blue |
-| 2 | Light Denim Blue |
-| 3 | Black |
-| 4 | Dark Denim Blue |
-| 5 | Dark Gray |
+---
 
-**4.3 - Dashboard Final:**
-<img src= "img/dashboard_final.png"  width="1000">
+## 6 - Next Steps to Improve  
 
-Notebook com o dashboard: [Notebook](final_data_analysis_dashboard.ipynb)
+- Collect data about sizes.  
+- Gather information on competitors.  
+- Collect data over a more extended period to capture seasonality trends.  
 
-## 5 - Conclusions
+---
 
-Você já deve ter ouvido falar que “Dados são o novo petróleo”, com web scraping nós temos acesso aos dados. Com os dados coletados podemos monitorar as tendências de mercado, coletar informações para captação de novos clientes, fazer previsões e muitas outras coisas.
+## 7 - Technologies  
 
-Mas os dados brutos não são fáceis de se interpretar, por isso temos o ETL, para que depois da extração, realizar o tratamento desses dados, para poder extrair informações que vão ajudar nas futuras tomadas de decisões e depois temos que carregar esses dados, para que todos na empresa tenham acesso a essas novas informações. Assim a empresa tem algo concreto para tomar as suas decisões, e não apenas contar com a intuição dos tomadores de decisões.
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)  
+![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)  
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)  
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)  
+![PyCharm](https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green)  
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)  
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)  
 
+---
 
-## 6 - Next Steps to Improve
+## 8 - Author  
 
-* Coletar informações sobre os tamanhos.
-* Coletar informações de outros competidores.
-* Coletar os dados por um período maior com objetivo de ter informações sobre a sazonalidade.
+**Lucas da Cunha**  
+Data Scientist in training  
 
+[Project Portfolio](https://jlcunha.github.io/portfolio_projetos/)  
+[GitHub Profile](https://github.com/jlcunha/)  
+[LinkedIn](http://www.linkedin.com/in/lucas-dacunha/)  
 
-## 7 - Technologies
-
-![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-![Jupyter Notebook](https://img.shields.io/badge/jupyter-%23FA0F00.svg?style=for-the-badge&logo=jupyter&logoColor=white)
-![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
-![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
-![PyCharm](https://img.shields.io/badge/pycharm-143?style=for-the-badge&logo=pycharm&logoColor=black&color=black&labelColor=green)
-![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-
-## 8 - Author
-
-Lucas da Cunha
-
-Data Scientist em formação
-
-[Portfolio de Projetos](https://jlcunha.github.io/portfolio_projetos/)
-
-[GitHub Profile](https://github.com/jlcunha/)
-
-[Linked In](http://www.linkedin.com/in/lucas-dacunha/)
