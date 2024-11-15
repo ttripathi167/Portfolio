@@ -119,7 +119,10 @@ This project is part of the course *Python: From Zero to Data Scientist* - [Comu
 
 ## 6. Contact
 
-Project by [Lucas da Cunha](https://www.linkedin.com/in/jose-lucas-da-cunha-28688a22a?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BS5kKyD%2BtTFWX2hvXam0x7g%3D%3D), a Data Scientist in training.
+Vaishnavi Tripathi
+Data Scientist
 
-- [Portfolio of Projects](https://jlcunha.github.io/portfolio_projetos/)  
-- [LinkedIn](http://www.linkedin.com/in/lucas-dacunha/)  
+
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
+
+[GitHub Profile](https://github.com/ttripathi167/)
