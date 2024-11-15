@@ -249,8 +249,3 @@ Data Scientist
 
 [GitHub Profile](https://github.com/ttripathi167/)
 
-[Project Portfolio](https://jlcunha.github.io/ProjectPortfolio/)
-
-[GitHub Profile](https://github.com/jlcunha/)
-
-[Medium](https://medium.com/@lucasdacunh)
