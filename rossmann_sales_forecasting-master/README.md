@@ -148,7 +148,11 @@ Python, Jupyter, Pandas, Scikit-Learn, Flask, Heroku.
 ---
 
 ## 7 - Author
-**Lucas da Cunha**  
-Data Scientist  
-[Portfolio](https://jlcunha.github.io/portfolio_projetos/) | [GitHub](https://github.com/jlcunha/) | [LinkedIn](http://www.linkedin.com/in/lucas-dacunha/)  
+
+Vaishnavi Tripathi
+Data Scientist
+
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
+
+[GitHub Profile](https://github.com/ttripathi167/) 
 
