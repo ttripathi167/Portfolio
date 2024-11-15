@@ -145,10 +145,10 @@ Fetch new data from customer regions.
 
 ## 5 - Author
 
-Lucas da Cunha
+Vaishnavi Tripathi
+Data Scientist
 
-Data Scientist / Data Analyst
 
-[Project Portfolio](https://jlcunha.github.io/portfolio_projetos/)
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
 
-[GitHub Profile](https://github.com/jlcunha/)
+[GitHub Profile](https://github.com/ttripathi167/)
