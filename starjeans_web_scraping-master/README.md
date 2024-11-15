@@ -135,10 +135,12 @@ Raw data, however, is not easy to interpret, which is where ETL comes in. It cle
 
 ## 8 - Author  
 
-**Lucas da Cunha**  
-Data Scientist in training  
+## 6. Contact
 
-[Project Portfolio](https://jlcunha.github.io/portfolio_projetos/)  
-[GitHub Profile](https://github.com/jlcunha/)  
-[LinkedIn](http://www.linkedin.com/in/lucas-dacunha/)  
+Vaishnavi Tripathi
+Data Scientist
+
+[Project Portfolio](https://ttripathi167.github.io/Portfolio/)
+
+[GitHub Profile](https://github.com/ttripathi167/) 
 
